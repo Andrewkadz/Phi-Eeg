@@ -1,0 +1,21 @@
+```python
+import csv
+
+# Create a CSV writer object
+with open('eeg_data.csv', 'w', newline='') as csvfile:
+    fieldnames = ['timestamp', 'channel_1', 'channel_2', 'channel_3']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    # Write the header row
+    writer.writeheader()
+
+    # Simulate some EEG data (replace with actual data later)
+    for i in range(10):
+        timestamp = str(i)  # Replace with actual timestamp values
+        channel_1 = round(random.uniform(-0.5, 0.5), 4)  # Replace with actual EEG value
+        channel_2 = round(random.uniform(-0.5, 0.5), 4)
+        channel_3 = round(random.uniform(-0.5, 0.5), 4)
+
+        writer.writerow({'timestamp': timestamp, 'channel_1': channel_1, 'channel_2': channel_2, 'channel_3':
+channel_3})
+```
